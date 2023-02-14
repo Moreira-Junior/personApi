@@ -1,4 +1,4 @@
-package com.moreirajunior.PersonAPI.model.dtos;
+package com.moreirajunior.PersonAPI.models.dtos;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

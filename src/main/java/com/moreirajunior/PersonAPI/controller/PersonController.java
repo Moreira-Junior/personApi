@@ -1,8 +1,8 @@
 package com.moreirajunior.PersonAPI.controller;
 
-import com.moreirajunior.PersonAPI.model.dtos.AddressDto;
-import com.moreirajunior.PersonAPI.model.dtos.PersonDto;
-import com.moreirajunior.PersonAPI.service.PersonService;
+import com.moreirajunior.PersonAPI.models.dtos.AddressDto;
+import com.moreirajunior.PersonAPI.models.dtos.PersonDto;
+import com.moreirajunior.PersonAPI.services.PersonService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

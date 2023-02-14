@@ -1,28 +1,25 @@
-package com.moreirajunior.PersonAPI.model.dtos;
+package com.moreirajunior.PersonAPI.models;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-public class AddressDto {
+@Entity
+public class Address {
 
-    @NotNull
-    @NotEmpty
-    @Size(min = 4, max = 20)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String street;
-    @NotNull
     private Long zipCode;
-    @NotNull
     private int number;
-    @NotNull
-    @NotEmpty
-    @Size(min = 4, max = 20)
     private String city;
 
-    public AddressDto() {
+    public Address() {
     }
 
-    public AddressDto(String street, Long zipCode, int number, String city) {
+    public Address(String street, Long zipCode, int number, String city) {
         this.street = street;
         this.zipCode = zipCode;
         this.number = number;

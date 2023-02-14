@@ -1,13 +1,13 @@
-package com.moreirajunior.PersonAPI.service;
+package com.moreirajunior.PersonAPI.services;
 
 import com.moreirajunior.PersonAPI.appLogger.AppLogger;
 import com.moreirajunior.PersonAPI.exceptions.PersonNotFoundException;
 import com.moreirajunior.PersonAPI.mapper.Mapper;
-import com.moreirajunior.PersonAPI.model.Address;
-import com.moreirajunior.PersonAPI.model.Person;
-import com.moreirajunior.PersonAPI.model.dtos.AddressDto;
-import com.moreirajunior.PersonAPI.model.dtos.PersonDto;
-import com.moreirajunior.PersonAPI.repository.PersonRepository;
+import com.moreirajunior.PersonAPI.models.Address;
+import com.moreirajunior.PersonAPI.models.Person;
+import com.moreirajunior.PersonAPI.models.dtos.AddressDto;
+import com.moreirajunior.PersonAPI.models.dtos.PersonDto;
+import com.moreirajunior.PersonAPI.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,24 +32,22 @@ public class PersonService {
     public PersonDto createPearson(PersonDto personDto) {
         Person person = Mapper.dtoToPerson(personDto);
         Person personCreated = this.personRepository.save(person);
-        LOGGER.info("Person created with id: " + personCreated.getId());
+        LOGGER.info("Person created");
         return Mapper.personToDto(personCreated);
     }
 
     public PersonDto getPersonById(Long id) {
         Person person = this.getPerson(id);
-        LOGGER.info("Person found with id: " + person.getId());
+        LOGGER.info("Person found");
         return Mapper.personToDto(person);
     }
 
     private Person getPerson(Long id) {
-        Optional<Person> person = this.personRepository.findById(id);
-        if(person.isPresent()){
-            return person.get();
-        } else {
+        Optional<Person> person = personRepository.findById(id);
+        return person.orElseThrow(() -> {
             LOGGER.warning("Person not found!");
-            throw new PersonNotFoundException();
-        }
+            return new PersonNotFoundException();
+        });
     }
 
     @Transactional
@@ -57,7 +55,7 @@ public class PersonService {
         Person person = Mapper.dtoToPerson(personDto);
         person.setId(this.getPerson(id).getId());
         Person editedPerson = this.personRepository.save(person);
-        LOGGER.info("Edited person with id: " + editedPerson.getId());
+        LOGGER.info("Edited person");
         return Mapper.personToDto(editedPerson);
     }
 
@@ -67,7 +65,7 @@ public class PersonService {
         Address address = Mapper.dtoToAddress(addressDto);
         personFound.getAddressList().add(address);
         Person personWithNewAddress = this.personRepository.save(personFound);
-        LOGGER.info("Address entered in person with id: " + personWithNewAddress.getId());
+        LOGGER.info("Address entered in person");
         return Mapper.personToDto(personWithNewAddress);
     }
 }

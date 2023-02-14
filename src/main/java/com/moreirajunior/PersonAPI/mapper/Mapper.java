@@ -1,9 +1,9 @@
 package com.moreirajunior.PersonAPI.mapper;
 
-import com.moreirajunior.PersonAPI.model.Address;
-import com.moreirajunior.PersonAPI.model.Person;
-import com.moreirajunior.PersonAPI.model.dtos.AddressDto;
-import com.moreirajunior.PersonAPI.model.dtos.PersonDto;
+import com.moreirajunior.PersonAPI.models.Address;
+import com.moreirajunior.PersonAPI.models.Person;
+import com.moreirajunior.PersonAPI.models.dtos.AddressDto;
+import com.moreirajunior.PersonAPI.models.dtos.PersonDto;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

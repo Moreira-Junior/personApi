@@ -1,6 +1,6 @@
-package com.moreirajunior.PersonAPI.repository;
+package com.moreirajunior.PersonAPI.repositories;
 
-import com.moreirajunior.PersonAPI.model.Address;
+import com.moreirajunior.PersonAPI.models.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

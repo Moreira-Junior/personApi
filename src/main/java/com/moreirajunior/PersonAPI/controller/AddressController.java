@@ -1,8 +1,7 @@
 package com.moreirajunior.PersonAPI.controller;
 
-import com.moreirajunior.PersonAPI.model.dtos.AddressDto;
-import com.moreirajunior.PersonAPI.model.dtos.PersonDto;
-import com.moreirajunior.PersonAPI.service.AddressService;
+import com.moreirajunior.PersonAPI.models.dtos.AddressDto;
+import com.moreirajunior.PersonAPI.services.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

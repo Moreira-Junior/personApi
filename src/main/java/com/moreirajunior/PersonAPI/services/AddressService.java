@@ -1,10 +1,10 @@
-package com.moreirajunior.PersonAPI.service;
+package com.moreirajunior.PersonAPI.services;
 
 import com.moreirajunior.PersonAPI.appLogger.AppLogger;
 import com.moreirajunior.PersonAPI.exceptions.AddressNotFoundException;
 import com.moreirajunior.PersonAPI.mapper.Mapper;
-import com.moreirajunior.PersonAPI.model.dtos.AddressDto;
-import com.moreirajunior.PersonAPI.repository.AddressRepository;
+import com.moreirajunior.PersonAPI.models.dtos.AddressDto;
+import com.moreirajunior.PersonAPI.repositories.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

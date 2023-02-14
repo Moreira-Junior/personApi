@@ -1,4 +1,4 @@
-package com.moreirajunior.PersonAPI.model;
+package com.moreirajunior.PersonAPI.models;
 
 import jakarta.persistence.*;
 
