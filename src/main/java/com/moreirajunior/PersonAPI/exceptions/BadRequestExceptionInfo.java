@@ -4,19 +4,19 @@ import java.time.LocalDateTime;
 
 public class BadRequestExceptionInfo {
 
-    private BadRequestException badRequestException;
+    private BadRequestException badRequestException = new BadRequestException("Bad request!");
 
     private String title;
     private int status;
     private LocalDateTime timestamp = LocalDateTime.now();
 
     public BadRequestExceptionInfo title(String title){
-        this.title = title;
+        this.badRequestException.setTitle(title);
         return this;
     }
 
     public BadRequestExceptionInfo status(int status){
-        this.status = status;
+        this.badRequestException.setStatus(status);
         return this;
     }
 
