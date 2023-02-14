@@ -31,13 +31,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionMessage);
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    //TODO find a way to handle the @valid exception from spring
-    public ResponseEntity<Object> badRequest(BadRequestException badRequestException) {
-        LOGGER.warning("Bad request " + badRequestException.getMessage());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new BadRequestExceptionInfo()
-                .title(badRequestException.getMessage())
-                .status(HttpStatus.BAD_REQUEST.value()).build());
-    }
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    //TODO find a way to handle the @valid exception from spring
+//    public ResponseEntity<Object> badRequest(BadRequestException badRequestException) {
+//        LOGGER.warning("Bad request " + badRequestException.getMessage());
+//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new BadRequestExceptionInfo()
+//                .title(badRequestException.getMessage())
+//                .status(HttpStatus.BAD_REQUEST.value()).build());
+//    }
 
 }
