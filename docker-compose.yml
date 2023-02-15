@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  db:
+    image: oscarfonts/h2
+    ports:
+      - "1521:1521"
+      - "81:81"
+    environment:
+      - H2_OPTIONS=-ifNotExists
+
+  person-api:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:tcp://db:1521/person
+      - SPRING_H2_CONSOLE_ENABLED=true

@@ -1,15 +1,17 @@
 package com.moreirajunior.PersonAPI.appLogger;
 
 import com.moreirajunior.PersonAPI.exceptions.LogConfigException;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
+@Component
 public class AppLogger {
     private static Logger LOGGER;
-    private static final String logFileDirectoryPath = System.getProperty("user.home") + "/data/log/";
+//    private static final String logFileDirectoryPath = System.getProperty("user.home") + "/data/log/";
+    private static final String logFileDirectoryPath = "/tmp";
 
     private AppLogger (){
 
