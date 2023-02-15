@@ -10,7 +10,6 @@ import java.util.logging.SimpleFormatter;
 @Component
 public class AppLogger {
     private static Logger LOGGER;
-//    private static final String logFileDirectoryPath = System.getProperty("user.home") + "/data/log/";
     private static final String logFileDirectoryPath = "/tmp";
 
     private AppLogger (){

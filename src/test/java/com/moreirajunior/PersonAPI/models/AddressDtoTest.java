@@ -1,16 +1,12 @@
 package com.moreirajunior.PersonAPI.models;
 
 import com.moreirajunior.PersonAPI.models.dtos.AddressDto;
-import com.moreirajunior.PersonAPI.models.dtos.PersonDto;
-import org.junit.jupiter.api.Test;
-
+import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
-import jakarta.validation.ConstraintViolation;
+import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;

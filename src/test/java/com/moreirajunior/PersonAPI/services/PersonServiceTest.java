@@ -1,17 +1,13 @@
 package com.moreirajunior.PersonAPI.services;
 
-import com.moreirajunior.PersonAPI.mapper.Mapper;
 import com.moreirajunior.PersonAPI.models.Address;
 import com.moreirajunior.PersonAPI.models.Person;
 import com.moreirajunior.PersonAPI.models.dtos.AddressDto;
 import com.moreirajunior.PersonAPI.models.dtos.PersonDto;
 import com.moreirajunior.PersonAPI.repositories.PersonRepository;
-import org.assertj.core.util.Arrays;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,9 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static org.hamcrest.Matchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
 
 @SpringBootTest
 @AutoConfigureMockMvc
